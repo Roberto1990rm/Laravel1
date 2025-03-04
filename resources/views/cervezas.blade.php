@@ -14,7 +14,7 @@
                         <p class="card-text">{{ $cerveza->descripcion }}</p>
                         <p class="text-muted">Precio: ${{ $cerveza->precio }}</p>
                         <p class="text-muted">Origen: {{ $cerveza->origen }}</p>
-                        <p class="text-muted">Graduación: {{ $cerveza->graduacion }} º</p>
+                        <p class="text-muted">Graduación: {{ $cerveza->graduacion }}º</p>
                     </div>
                 </div>
             </div>
