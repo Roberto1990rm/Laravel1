@@ -28,9 +28,12 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
+                
+
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'World Beer') }}
+                    <img src="{{ asset('favicon/favicon.ico') }}" alt="Logo" width="32" height="32">
                 </a>
+                
 
                 <a class="navbar-brand" href="#">Cervecerías</a>
                 <div class="collapse navbar-collapse" id="navbarNav">
