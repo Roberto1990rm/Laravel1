@@ -53,4 +53,5 @@
     <div class="text-center mt-5">
         <a href="{{ url('/cervezas') }}" class="btn btn-lg btn-success">Ver toda la selección de cervezas</a>
     </div>
+    
 @endsection
