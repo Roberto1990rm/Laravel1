@@ -26,7 +26,7 @@
             <!-- Tarjeta de Cerveza 2 -->
             <div class="col-md-4 mb-4">
                 <div class="card shadow-sm">
-                    <img src="{{ asset('images/cerveza2.jpg') }}" class="card-img-top" alt="Cerveza">
+                    <img src="{{ asset('images/cerveza1.jpg') }}" class="card-img-top" alt="Cerveza">
                     <div class="card-body">
                         <h5 class="card-title">Cervecerías Locales</h5>
                         <p class="card-text">Conoce los mejores productores de cerveza artesanal en tu zona.</p>
@@ -38,7 +38,7 @@
             <!-- Tarjeta de Cerveza 3 -->
             <div class="col-md-4 mb-4">
                 <div class="card shadow-sm">
-                    <img src="{{ asset('images/cerveza3.jpg') }}" class="card-img-top" alt="Cerveza">
+                    <img src="{{ asset('images/cerveza1.jpg') }}" class="card-img-top" alt="Cerveza">
                     <div class="card-body">
                         <h5 class="card-title">Eventos y Catas</h5>
                         <p class="card-text">Únete a eventos exclusivos y catas de cervezas artesanales.</p>
