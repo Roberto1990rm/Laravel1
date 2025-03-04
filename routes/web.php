@@ -3,6 +3,10 @@
 use App\Models\Cerveza;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CervezaController;
+use Illuminate\Support\Facades\Auth;
+
+Auth::routes();
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -19,3 +23,7 @@ Route::get('/cervezas', function () {
 
 Route::get('/cervezas/create', [CervezaController::class, 'create'])->name('cervezas.create');
 Route::post('/cervezas', [CervezaController::class, 'store'])->name('cervezas.store');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
