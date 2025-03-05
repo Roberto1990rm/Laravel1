@@ -16,7 +16,12 @@
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
     @vite(['resources/css/styles.css'])
+    @vite(['resources/css/cervezas.css'])
 
+    <head>
+        <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+        @yield('styles')
+    
 
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('favicon/favicon-16x16.png') }}">
 <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('favicon/favicon-32x32.png') }}">
