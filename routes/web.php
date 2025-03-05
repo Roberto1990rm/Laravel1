@@ -23,6 +23,7 @@ Route::get('/cervezas', function () {
 
 Route::get('/cervezas/create', [CervezaController::class, 'create'])->name('cervezas.create');
 Route::post('/cervezas', [CervezaController::class, 'store'])->name('cervezas.store');
+Route::delete('/cervezas/{id}', [CervezaController::class, 'destroy'])->name('cervezas.destroy');
 
 Auth::routes();
 

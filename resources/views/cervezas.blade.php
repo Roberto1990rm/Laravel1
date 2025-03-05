@@ -16,8 +16,15 @@
                         <p class="text-muted">Origen: {{ $cerveza->origen }}</p>
                         <p class="text-muted">Graduación: {{ $cerveza->graduacion }}º</p>
                     </div>
+                    <form action="{{ route('cervezas.destroy', $cerveza->id) }}" method="POST" onsubmit="return confirm('¿Estás seguro de que deseas eliminar esta cerveza?');">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-danger">Eliminar</button>
+                    </form>
                 </div>
+                
             </div>
+           
         @endforeach
     </div>
 </div>

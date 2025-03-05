@@ -44,5 +44,15 @@ class CervezaController extends Controller
         // Redirigir con un mensaje de éxito
         return redirect()->route('cervezas.create')->with('success', 'Cerveza agregada correctamente.');
     }
+
+
+    public function destroy($id)
+{
+    $cerveza = Cerveza::findOrFail($id);
+    $cerveza->delete();
+
+    return redirect()->back()->with('success', 'Cerveza eliminada correctamente.');
+}
+
 }
 
