@@ -28,7 +28,42 @@
                 </div>
                 
             </div>
-           
+            <script>
+          document.addEventListener("DOMContentLoaded", function () {
+    const cards = document.querySelectorAll(".card");
+    let activeCard = null;
+
+    cards.forEach((card) => {
+        card.addEventListener("click", function (event) {
+            event.stopPropagation(); // Evita que el evento se propague al body
+            
+            // Si ya es la activa, la desactiva
+            if (activeCard === this) {
+                this.classList.remove("active");
+                activeCard = null;
+            } else {
+                // Desactiva cualquier otra tarjeta activa
+                if (activeCard) {
+                    activeCard.classList.remove("active");
+                }
+                // Activa la nueva tarjeta
+                this.classList.add("active");
+                activeCard = this;
+            }
+        });
+    });
+
+    // Al hacer clic fuera de cualquier tarjeta, se cierra la activa
+    document.addEventListener("click", function () {
+        if (activeCard) {
+            activeCard.classList.remove("active");
+            activeCard = null;
+        }
+    });
+});
+
+            </script>
+            
         @endforeach
     </div>
 </div>

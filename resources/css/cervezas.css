@@ -1,0 +1,13 @@
+.card {
+    transition: transform 0.3s ease-in-out, left 0.3s ease-in-out, top 0.3s ease-in-out;
+    position: relative;
+    cursor: pointer;
+}
+
+.card.active {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(1.4); /* 🔥 Aquí combinamos el translate y el scale */
+    z-index: 10;
+}
