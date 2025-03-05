@@ -1,13 +1,69 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* 🔥 Hace que el título ocupe siempre el 100% del ancho */
+.titulo-cervezas {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+/* 🔥 Ajuste para la cuadrícula de Bootstrap */
+@media (max-width: 767px) {
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .col-6 {
+        flex: 0 0 50%;
+        max-width: 50%; /* 🔥 2 columnas en móviles */
+    }
+}
+
 .card {
-    transition: transform 0.3s ease-in-out, left 0.3s ease-in-out, top 0.3s ease-in-out;
     position: relative;
+    transition: transform 0.3s ease-in-out, left 0.3s ease-in-out, top 0.3s ease-in-out;
     cursor: pointer;
+    background: #fff;
+    padding: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px; /* 🔥 Bordes redondeados */
+    overflow: hidden; /* 🔥 Evita que el contenido sobresalga */
+}
+
+.card img {
+    width: 100%; /* 🔥 Hace que la imagen sea responsiva */
+    height: auto;
+    display: block;
+    border-radius: 5px;
 }
 
 .card.active {
     position: fixed;
     left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%) scale(1.4); /* 🔥 Aquí combinamos el translate y el scale */
+    top: min(50%, 15px + var(--title-height)); /* 🔥 No tapa el título */
+    transform: translate(-50%, 0) scale(1.5);
     z-index: 10;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2); /* 🔥 Sombra más fuerte para resaltar */
+}
+
+/* 🔥 Botón de eliminar */
+.delete-btn {
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: red;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
 }
