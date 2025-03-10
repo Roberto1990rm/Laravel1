@@ -46,6 +46,24 @@ class CervezaController extends Controller
     }
 
 
+
+
+
+  
+    
+    
+        public function index()
+        {
+            $cervezas = Cerveza::all();
+            return view('cervezas.index', compact('cervezas'));
+        }
+    
+
+
+
+
+
+
     public function destroy($id)
 {
     $cerveza = Cerveza::findOrFail($id);
@@ -53,6 +71,47 @@ class CervezaController extends Controller
 
     return redirect()->back()->with('success', 'Cerveza eliminada correctamente.');
 }
+
+public function edit($id)
+{
+    $cerveza = Cerveza::findOrFail($id); // Busca la cerveza o devuelve error 404
+    return view('cervezas.edit', compact('cerveza'));
+}
+
+
+
+public function update(Request $request, $id)
+{
+    $request->validate([
+        'nombre' => 'required|string|max:255',
+        'graduacion' => 'required|numeric|min:0',
+        'origen' => 'required|string|max:255',
+        'precio' => 'required|numeric|min:0',
+        'foto' => 'nullable|image|max:2048',
+    ]);
+
+    $cerveza = Cerveza::findOrFail($id);
+    $cerveza->nombre = $request->nombre;
+    $cerveza->graduacion = $request->graduacion;
+    $cerveza->origen = $request->origen;
+    $cerveza->precio = $request->precio;
+
+    if ($request->hasFile('foto')) {
+        $path = $request->file('foto')->store('cervezas', 'public');
+        $cerveza->foto = $path;
+    }
+
+    $cerveza->save();
+
+    return redirect()->route('cervezas');
+}
+
+public function show($id)
+{
+    $cerveza = Cerveza::findOrFail($id); // Busca la cerveza por ID
+    return view('cervezas.show', compact('cerveza')); // Pasa la cerveza a la vista show
+}
+
 
 }
 

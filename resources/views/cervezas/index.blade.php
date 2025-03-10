@@ -17,6 +17,7 @@
                         <p class="text-muted">Origen: {{ $cerveza->origen }}</p>
                         <p class="text-muted">Graduación: {{ $cerveza->graduacion }}º</p>
                     </div>
+                    <a href="{{ route('cervezas.show', $cerveza->id) }}" class="btn btn-primary">Ver más</a>
 
                     @auth
                     <form action="{{ route('cervezas.destroy', $cerveza->id) }}" method="POST" onsubmit="return confirm('¿Estás seguro de que deseas eliminar esta cerveza?');">
@@ -26,6 +27,8 @@
                             ✖
                         </button>
                     </form>
+                    <a href="{{ route('cervezas.edit', $cerveza->id) }}" class="btn btn-warning">Editar</a>
+
                     @endauth
                         <script>
 document.addEventListener("DOMContentLoaded", function () {
